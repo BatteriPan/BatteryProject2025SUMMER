@@ -35,7 +35,7 @@ grid on;                % Creates a grid on the graph
 ylim([0 V_max*1.1]);    % Sets y-axis limits for better visualization
 
 % Save the plot as a PNG file for documentation
-% saveas(gcf, 'BatteryVoltagePlot.png'); 
+saveas(gcf, 'BatteryVoltagePlot.png'); 
 % ^ Currently commented out until documentation ^
 
 
