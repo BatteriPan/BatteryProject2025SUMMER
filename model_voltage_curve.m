@@ -7,8 +7,8 @@ clear , clc, close all;
 
 %% 1. Define Constants using Panasonic NCA103450
 V_max = 4.2;    % Maximum Charging Voltage (V)
-R = 0.25;     % Equivalent Resistance (Ohms)
-C = 11520;       % Equivalent Capacitance (Farads)
+R = 0.25;       % Equivalent Resistance (Ohms)
+C = 11520;      % Equivalent Capacitance (Farads)
 % Note: R and C are estimated based on the specified standard charging time
 % of 4.0 hours. All calculations and reasoning are shown in 'Voltage Model
 % Calculations' pdf.
@@ -35,8 +35,8 @@ grid on;                % Creates a grid on the graph
 ylim([0 V_max*1.1]);    % Sets y-axis limits for better visualization
 
 % Save the plot as a PNG file for documentation
-saveas(gcf, 'BatteryVoltagePlot.png'); 
-
+% saveas(gcf, 'BatteryVoltagePlot.png'); 
+% ^ Currently commented out until documentation ^
 
 
 
