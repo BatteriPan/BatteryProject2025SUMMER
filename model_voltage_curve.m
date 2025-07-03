@@ -7,17 +7,17 @@ clear , clc, close all;
 
 %% 1. Define Constants using Panasonic NCA103450
 V_max = 4.2;    % Maximum Charging Voltage (V)
-R = 100e-3;     % Equivalent Resistance (Ohms)
-C = 1000;       % Equivalent Capacitance (Farads)
-% Note: R and C are currently placeholders to set 'tau' equal to R*C.
-% We will need to adjust this product to fit our battery's actual charging
-% time data - 4.0 hours
+R = 0.25;     % Equivalent Resistance (Ohms)
+C = 11520;       % Equivalent Capacitance (Farads)
+% Note: R and C are estimated based on the specified standard charging time
+% of 4.0 hours. All calculations and reasoning are shown in 'Voltage Model
+% Calculations' pdf.
 
 %% 2. Set up Time Vector
 % Defines the simulation time to be long enough to see a full charge.
 % A good rule of thumb is 5*(R*C) reaches ~99.3% charge.
 tau = R * C;
-t_end = 5 * tau;    % End time for simulation (seconds)
+t_end = 5 * tau;    % End time for simulation (seconds) (std. 4.0 hours)
 t = 0:1:t_end;      % Time vector from 0 to t_end, with 1-second steps
 
 %% 3. Calculate Voltage Over Time
@@ -35,8 +35,8 @@ grid on;                % Creates a grid on the graph
 ylim([0 V_max*1.1]);    % Sets y-axis limits for better visualization
 
 % Save the plot as a PNG file for documentation
-% saveas(gcf, 'BatteryVoltagePlot.png'); 
-% ^Currently commented out until finished^
+saveas(gcf, 'BatteryVoltagePlot.png'); 
+
 
 
 
