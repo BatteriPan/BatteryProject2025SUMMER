@@ -6,7 +6,7 @@ clear , clc, close all;
 %[text] These values are estimated to give a realistic time constant for charging. You can modify R and C to simulate different battery conditions.
 V_max = 4.2;      % Maximum charging voltage (Volts)
 R = 0.25;         % Equivalent resistance (Ohms)
-C = 11,520;       % Equivalent capacitance (Farads) %[output:3abdf516]
+C = 11520;       % Equivalent capacitance (Farads) %[output:3abdf516]
 %[text] ## Set up Time Vector 
 %[text] Time resolution can be adjusted to smooth curves in the plots 
 tau = R * C;            % Time constant (tau) 
