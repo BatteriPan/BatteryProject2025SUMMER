@@ -1,7 +1,7 @@
 %% -Compute Power Function-
 % This function calculates the voltage across a capacitor (or battery terminal)
-during charging in an RC circuit. The voltage increases exponentially
-over time toward a maximum voltage (V\_max) based on the time constant (tau).
+% during charging in an RC circuit. The voltage increases exponentially
+% over time toward a maximum voltage (V\_max) based on the time constant (tau).
 
 %% Inputs
 % V_t - Voltage vector over time (Volts)

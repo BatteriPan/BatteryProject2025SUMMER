@@ -35,7 +35,12 @@ P_t = ComputePower(V_t, I_t);
 
 %% Graph Voltage vs. Time
 PlotVoltage(t, V_t);
+saveas(gcf,'BatteryVoltagePlot.png');
+
 %% Graph Current vs. Time
 PlotCurrent(t, I_t); 
+saveas(gcf,'BatteryCurrentPlot.png');
+
 %% Graph Power vs. Time
 PlotPower(t, P_t); 
+saveas(gcf,'BatteryPowerPlot.png');
