@@ -10,6 +10,7 @@
 
 %% Output
 % A figure displaying power vs. time
+
 function PlotPower(t, P_t)
     figure;                             % Create a new figure
     plot(t, P_t, 'LineWidth', 2);       % Plot power vs. time

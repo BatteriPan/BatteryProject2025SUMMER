@@ -10,10 +10,11 @@
 % t     - Time vector (Seconds)
 
 %% Outputs
-% I\_t - Current vector over time (Amps)
+% I_t   - Current vector over time (Amps)
 
 %% Equation
 % I(t) = (V_max / R)*e^(-t/tau)
+
 function I_t = ComputeCurrent(V_max, R, tau, t)
     I_t = (V_max / R) * exp(-t / tau);
 end

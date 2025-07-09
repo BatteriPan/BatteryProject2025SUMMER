@@ -9,6 +9,7 @@
 
 %% Output
 % A figure displaying voltage vs. time
+
 function PlotVoltage(t, V_t)
     figure;                             % Create a new figure
     plot(t, V_t, 'LineWidth', 2);       % Plot voltage vs. time

@@ -12,6 +12,7 @@
 
 %% Equations 
 % P(t) = V(t) * I(t)
+
 function P_t = ComputePower(V_t, I_t)
     P_t = V_t .* I_t;
 end

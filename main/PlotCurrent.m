@@ -8,7 +8,8 @@
 % I_t - Current vector over time (Amps)
 
 %% Output
-%A figure displaying current vs. time
+% A figure displaying current vs. time
+
 function PlotCurrent(t, I_t)
     figure;                             % Create a new figure
     plot(t, I_t, 'LineWidth', 2);       % Plot current vs. time

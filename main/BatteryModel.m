@@ -26,7 +26,7 @@ t = 0:0.01:t_end;       % Time vector with 0.01-second intervals
 V_t = ComputeVoltage(V_max, tau, t);   
 
 %% Calculate Current over Time
-%[text]  Current is calculated as an exponential decay function
+% Current is calculated as an exponential decay function
 I_t = ComputeCurrent(V_max, R, tau, t);
 
 %% Calculate Instantaneous Power over Time
