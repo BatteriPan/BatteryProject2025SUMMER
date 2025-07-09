@@ -1,0 +1,59 @@
+\documentclass[]{article}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\title{Estimating RC Parameters for the Panasonic NCA103450 Battery}
+\author{}
+\date{}
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Overview}
+	
+	The datasheet for the Panasonic NCA103450 battery does not provide direct values for DC internal resistance or capacitance. To model the battery as an RC circuit, we use the time constant formula:
+	\begin{equation*}
+		\tau = R \cdot C
+	\end{equation*}
+	It takes approximately \(5\tau\) to fully charge the battery. Given that the specified charge time is 4.0 hours (or 14400 seconds), we calculate:
+	\begin{equation*}
+		5\tau = 14400 \quad \Rightarrow \quad \tau = 2880\ \text{s}
+	\end{equation*}
+	
+	\section*{Method 1: Estimate $R$, Solve for $C$}
+	
+	From the spec sheet, the AC internal resistance is less than 100 m$\Omega$, and DC resistance is typically higher. We conservatively estimate:
+	\begin{equation*}
+		R = 0.25\ \Omega
+	\end{equation*}
+	Solving for capacitance using the time constant:
+	\begin{equation*}
+		C = \frac{\tau}{R} = \frac{2880}{0.25} = 11520\ \text{F}
+	\end{equation*}
+	Although this value is large, it is reasonable for a \textbf{modeled capacitor} representing the battery’s charge-holding behavior.
+	
+	\section*{Method 2: Estimate $C$, Solve for $R$}
+	
+	Battery rated capacity is 2.2 Ah, which can be converted to coulombs using:
+	\begin{equation*}
+		Q = I \cdot t = 2.2\ \text{A} \times 3600\ \text{s} = 7920\ \text{C}
+	\end{equation*}
+	Using the relationship \(Q = C \cdot V\), and \(V = 3.6\ \text{V}\), we estimate:
+	\begin{equation*}
+		C = \frac{Q}{V} = \frac{7920}{3.6} \approx 2200\ \text{F}
+	\end{equation*}
+	Now solving for resistance using \(\tau = R \cdot C\):
+	\begin{equation*}
+		R = \frac{\tau}{C} = \frac{2880}{2200} \approx 1.31\ \Omega
+	\end{equation*}
+	This gives a much higher resistance than expected, so we proceed with Method 1 as the more realistic model.
+	
+	\section*{Conclusion}
+	
+	Modeling a battery as an RC circuit involves approximations. Method 1, using:
+	\begin{equation*}
+		R = 0.25\ \Omega \quad \Rightarrow \quad C = 11520\ \text{F}
+	\end{equation*}
+	is consistent with the specified 4-hour charge time of the Panasonic NCA103450 cell and aligns better with typical resistance behavior.
+	
+\end{document}
