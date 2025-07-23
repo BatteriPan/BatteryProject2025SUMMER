@@ -6,7 +6,7 @@
 % results in t = inf. Thus, we instead use V(t) = 0.999  * V_max
 
 %% Inputs
-% V_max: the charging voltage (or maximmum voltage/100% SOC) (Volts)
+% V_max: the charging voltage (or maximum voltage/100% SOC) (Volts)
 % tau: time constant (seconds)
 
 %% Outputs
