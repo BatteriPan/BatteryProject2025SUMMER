@@ -49,6 +49,10 @@ I_t = ComputeCurrent(V_max, R, tau, t);
 % Power is calculated as the pointwise product of voltage and current
 P_t = ComputePower(V_t, I_t);
 
+%% Calculate Rate of Voltage Change over Time
+% dVdt is calculated as the derivative of the exponential charging equation
+dV_dt = ComputeVoltageDerivative(V_max, tau, t);
+
 %% Calculate Total Energy
 % Total energy is the integral of power over time (Joules)
 total_energy_joules = trapz(t, P_t);
@@ -71,3 +75,7 @@ saveas(gcf,'BatteryCurrentPlot.png');
 %% Graph Power vs. Time
 PlotPower(t, P_t); 
 saveas(gcf,'BatteryPowerPlot.png');
+
+%% Graph Rate of Voltage Change vs. Time
+PlotdV_dt(t, dV_dt);
+saveas(gcf,'VoltageDerivativePlot.png');
