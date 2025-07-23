@@ -33,6 +33,17 @@ I_t = ComputeCurrent(V_max, R, tau, t);
 % Power is calculated as the pointwise product of voltage and current
 P_t = ComputePower(V_t, I_t);
 
+%% Calculate Total Energy
+% Total energy is the integral of power over time (Joules)
+total_energy_joules = trapz(t, P_t);
+
+% Convert Joules to Watt-hours for a more common unit
+total_energy_Wh = total_energy_joules / 3600;
+
+% Display result
+fprintf('Total energy delivered to the battery: %.2f Joules (%.2f Wh)\n',...
+    total_energy_joules, total_energy_Wh);
+
 %% Graph Voltage vs. Time
 PlotVoltage(t, V_t);
 saveas(gcf,'BatteryVoltagePlot.png');
