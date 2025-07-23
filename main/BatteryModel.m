@@ -21,6 +21,22 @@ tau = R * C;            % Time constant (tau)
 t_end = 5 * tau;        % Total simulation time (~99% charge)
 t = 0:0.01:t_end;       % Time vector with 0.01-second intervals
 
+%% Analysis: Time to reach 80% and 100% SOC
+% Calculate the coltage at 80% SOC (assuming start at 0V)
+V_80 = ComputeV80(0,V_max);
+
+% Calculate the time to reach 80% SOC
+t_80_seconds = Time2Reach80(V_80, V_max, tau);
+t_80_minutes = t_80_seconds / 60;
+
+% Calculate the time to reach 99.9% (approx. 100%) SOC
+t_max_seconds = Time2ReachMAX(V_max, tau);
+t_max_hours = t_max_seconds / 3600;
+
+% Display the results
+fprintf('Time to reach 80% SOC: %.2f minutes\n', t_80_minutes);
+fprintf('Time to reach 99.9% SOC: %.2f hours\n', t_max_hours);
+
 %% Calculate Voltage over Time
 % Voltage is computed using the exponential charging equation
 V_t = ComputeVoltage(V_max, tau, t);   
