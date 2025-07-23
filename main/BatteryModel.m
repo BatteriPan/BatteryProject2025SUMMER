@@ -64,6 +64,17 @@ total_energy_Wh = total_energy_joules / 3600;
 fprintf('Total energy delivered to the battery: %.2f Joules (%.2f Wh)\n',...
     total_energy_joules, total_energy_Wh);
 
+%% Calculate Energy Lost and Efficiency
+% Energy lost to heat in resistor (Joules)
+energy_loss_joules = ComputeEnergyLoss(t, I_t, R);
+
+% Charging efficiency (%)
+efficiency = (total_energy_joules / (total_energy_joules + energy_loss_joules)) * 100;
+
+% Display results
+fprintf('Total energy lost to heat: %.2f Joules\n', energy_loss_joules);
+fprintf('Charging Efficiency: %.2f%%\n', efficiency);
+
 %% Graph Voltage vs. Time
 PlotVoltage(t, V_t);
 saveas(gcf,'BatteryVoltagePlot.png');
