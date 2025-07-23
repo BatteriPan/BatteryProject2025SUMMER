@@ -34,8 +34,8 @@ t_max_seconds = Time2ReachMAX(V_max, tau);
 t_max_hours = t_max_seconds / 3600;
 
 % Display the results
-fprintf('Time to reach 80% SOC: %.2f minutes\n', t_80_minutes);
-fprintf('Time to reach 99.9% SOC: %.2f hours\n', t_max_hours);
+fprintf('Time to reach 80%% SOC: %.2f minutes\n', t_80_minutes);
+fprintf('Time to reach 99.9%% SOC: %.2f hours\n', t_max_hours);
 
 %% Calculate Voltage over Time
 % Voltage is computed using the exponential charging equation
