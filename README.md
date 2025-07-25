@@ -1,4 +1,4 @@
-## -BatteryProject2025SUMMER- 
+# -BatteryProject2025SUMMER- 
 Modeling and Optimizing a Battery Charging Profile
 
 The model was based on a RC circuit where the capacitor modeled our battery. We used the data sheet to 
