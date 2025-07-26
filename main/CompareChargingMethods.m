@@ -50,9 +50,11 @@ legend('CV Model', 'CC-CV Model', 'Location', 'SouthEast');
 grid on;
 % Add a vertical line for the CC-CV charge time
 if ~isempty(cutoff_idx_vec)
-    xline(charge_time_hours, 'k--', {'Charge Complete'});
+    xline(charge_time_hours, 'w--', {'Charge Complete'}, 'Color', 'white', 'LabelColor', 'white');
 end
 hold off;
+
+saveas(gcf,'VoltageComparison.png');
 
 % Current Comparison
 figure;
@@ -66,6 +68,8 @@ legend('CV Model', 'CC-CV Model', 'Location', 'NorthEast');
 grid on;
 % Add a vertical line for the CC-CV charge time
 if ~isempty(cutoff_idx_vec)
-    xline(charge_time_hours, 'k--', {'Charge Complete'});
+    xline(charge_time_hours, 'w--', {'Charge Complete'}, 'Color', 'white', 'LabelColor', 'white');
 end
 hold off;
+
+saveas(gcf,'CurrentComparison.png');
