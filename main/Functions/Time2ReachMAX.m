@@ -14,7 +14,7 @@
 
 %% Equations
 % t_MAX = -tau * ln(1 - V_target/V_max);
-function t_MAX = Time2ReachMAX(V_max,tau)
-    V_full = 0.999 * V_max;
-    t_MAX = -tau * log(1 - V_full / V_max);
+function t_MAX = Time2ReachMAX(V_start, V_max, tau)
+    V_full = V_start + 0.999 * (V_max - V_start);
+    t_MAX = -tau * log((V_max - V_full) / (V_max - V_start));
 end

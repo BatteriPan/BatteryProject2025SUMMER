@@ -11,9 +11,10 @@ clear , clc, close all;
 % These values are estimated to give a realistic time constant for charging. 
 % You can modify R and C to simulate different battery conditions.
 
+V_start = 3.2;  % Starting voltage for 0% SOC (V)
 V_max = 4.2;    % Maximum charging voltage (Volts)
 R = 0.25;       % Equivalent resistance (Ohms)
-C = 11520;      % Equivalent capacitance (Farads) 
+C = 11338;      % Equivalent capacitance (Farads) 
 
 %% Set up Time Vector 
 % Time resolution can be adjusted to smooth curves in the plots 
@@ -23,14 +24,14 @@ t = 0:0.01:t_end;       % Time vector with 0.01-second intervals
 
 %% Analysis: Time to reach 80% and 100% SOC
 % Calculate the coltage at 80% SOC (assuming start at 0V)
-V_80 = ComputeV80(0,V_max);
+V_80 = ComputeV80(V_start,V_max);
 
 % Calculate the time to reach 80% SOC
-t_80_seconds = Time2Reach80(V_80, V_max, tau);
+t_80_seconds = Time2Reach80(V_start, V_80, V_max, tau);
 t_80_minutes = t_80_seconds / 60;
 
 % Calculate the time to reach 99.9% (approx. 100%) SOC
-t_max_seconds = Time2ReachMAX(V_max, tau);
+t_max_seconds = Time2ReachMAX(V_start, V_max, tau);
 t_max_hours = t_max_seconds / 3600;
 
 % Display the results
@@ -39,11 +40,11 @@ fprintf('Time to reach 99.9%% SOC: %.2f hours\n', t_max_hours);
 
 %% Calculate Voltage over Time
 % Voltage is computed using the exponential charging equation
-V_t = ComputeVoltage(V_max, tau, t);   
+V_t = ComputeVoltage(V_start, V_max, tau, t);   
 
 %% Calculate Current over Time
 % Current is calculated as an exponential decay function
-I_t = ComputeCurrent(V_max, R, tau, t);
+I_t = ComputeCurrent(V_start, V_max, R, tau, t);
 
 %% Calculate Instantaneous Power over Time
 % Power is calculated as the pointwise product of voltage and current

@@ -15,8 +15,8 @@
 %% Equation
 % I(t) = (V_max / R)*e^(-t/tau)
 
-function I_t = ComputeCurrent(V_max, R, tau, t)
-    I_t = (V_max / R) * exp(-t / tau);
+function I_t = ComputeCurrent(V_start, V_max, R, tau, t)
+    I_t = ((V_max - V_start) / R) * exp(-t / tau);
 end
 
 

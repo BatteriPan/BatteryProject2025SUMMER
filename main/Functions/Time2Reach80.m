@@ -12,6 +12,6 @@
 
 %% Equations
 % t = -tau * ln(1 - V_80 / V_max)
-function t_80 = Time2Reach80(V_80,V_max,tau)
-    t_80 = -tau * log(1 - V_80 / V_max);
+function t_80 = Time2Reach80(V_start, V_80,V_max,tau)
+    t_80 = -tau * log(1 - V_80 / (V_max - V_start));
 end

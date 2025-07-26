@@ -14,8 +14,8 @@
 %% Equations 
 % V(t) = V_max (1 - e^{-t/tau})
 
-function V_t = ComputeVoltage(V_max, tau, t)
-    V_t = V_max * (1 - exp(-t / tau));
+function V_t = ComputeVoltage(V_start, V_max, tau, t)
+    V_t = V_max - (V_max - V_start) .* exp(-t / tau);
 end
 
 
