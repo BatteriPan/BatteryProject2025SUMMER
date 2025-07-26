@@ -14,12 +14,19 @@ The key results of the comparison show that the CC-CV charging method is signifi
 # Figures
 
 Voltage and Current Profiles (CV Model)
+The following plots show the voltage, current, power, and the rate of voltage change for the simple Constant Voltage (CV) charging model:
 
-The following plots show the voltage, current, and power for the simple Constant Voltage (CV) charging model.
+![BatteryCurrentPlot](Documents/Plots/BatteryCurrentPlot.png)
+![BatteryVoltagePlot](Documents/Plots/BatteryVoltagePlot.png)
+![BatteryPowerPlot](Documents/Plots/BatteryPowerPlot.png)
+![VoltageDerivativePlot](Documents/Plots/VoltageDerivativePlot.png)
 
 CC-CV vs. CV Comparison
+These plots compare the voltage and current profiles of the faster CC-CV model against the CV model, highlighting the efficiency gains:
 
-These plots compare the voltage and current profiles of the faster CC-CV model against the CV model, highlighting the efficiency gains.
+![Voltage Comparison](Documents/Plots/VoltageComparison.png)
+
+![Current Comparison](Documents/Plots/CurrentComparison.png)
 
 # Repository Layout
 
@@ -51,12 +58,14 @@ These plots compare the voltage and current profiles of the faster CC-CV model a
 
 # Work Breakdown
 
-    Yeidi Bautista: Functions to compute time to 80% and 100% SOC.
+    Yeidi Bautista: Set up a team organization tool to manage all tasks. Sourced battery and specification sheets for said NCA103450 battery. Calculated R & C values based on spec sheet charging times. Drafted initial script for battery voltage plot. Wrote and implemented functions for calculating the time to reach 80% and 100% SOC. Drafted and finalized functions and script to compare our original RC model to a CC-CV charging method.
 
-    Mariah Contreras: Calculating and graphing the derivative of the voltage curve (dV/dt).
+    Mariah Contreras: Rewrote drafts to implement modular functions. Finalized main battery script to calculate and plot battery current vs.time, voltage vs. time, and power vs. time. Calculated the derivative in order to plot the rate of voltage change. Documented calculations in a more reader-friendly TEX format. Organized team documents into a shared google drive folder.
 
-    Baltazar Pacheco Hernandez: Calculating charging efficiency; Debugging if needed; Cleaning up files and improving readability.
+    Baltazar Pacheco Hernandez: Ran through files to ensure there were no issues and debugged them if needed. Cleaned up files to improve readability and made adjustments to comments/code in the files. Calculated the Charging Efficiency based on an RC Circuit using the provided R & C values. Wrote functions to find the optimized charging time and worked with the optimization toolbox, and attempted to implement it.
 
-    Hassan Naboulsi: Updating GitHub README file with recent code changes and usage instructions.
+
+    Hassan Naboulsi: Updating GitHub README file with recent code changes and usage instructions. Managed meeting agendas. Conducted routine repository quality checks. Reviewed and summarized basic RC-circuit theory. Researched optimization toolbox.
+
 # Further Notes
 
